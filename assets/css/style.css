@@ -61,3 +61,51 @@ img {
     width: 60px;
     height: 60px;
 }
+
+.card ul li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.card ul li + li{
+    padding-top: 24px;
+    border-top: 1px solid #323238;
+}
+.card ul li strong{
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 125%;
+    color: aliceblue;
+}
+.card h2:hover,
+.card ul li strong:hover,
+.card ul li img:hover{
+    transform: scale(1.2);
+}
+.card h2,
+.card ul li strong,
+.card ul li img{
+    transition: transform 0.4s;
+}
+.card{
+    opacity: 0;
+    animation: appear 0.2s forwards;
+}
+
+@keyframes appear {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (min-width: 700px) {
+    #cards {
+        max-width: 670px;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
